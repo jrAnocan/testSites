@@ -1,3 +1,150 @@
+*{
+  box-sizing: border-box;
+}
+body{
+    display:inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 5px;
+    min-height: 100vh;
+    background: linear-gradient(#141e30, #2a6c56);
+    justify-content: center;
+    align-items: top;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+::selection{
+  background: #6d50e2;
+  color: #fff;
+}
+.container{
+  max-width: 950px;
+  width: 100%;
+  padding: 40px 50px  40px  40px;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .topic{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.content{
+  display: flex;
+  align-items: top;
+}
+.content .list{
+  
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content .list-horizontal{
+  
+  display: inline-flex;
+  flex-direction: row;
+  position: relative;
+}
+.content .list label{
+  
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+
+.content .list-horizontal label{
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+
+#tab1:checked ~ .list label.tab1,
+#tab2:checked ~ .list label.tab2,
+#tab3:checked ~ .list label.tab3,
+#tab4:checked ~ .list label.tab4{
+    color: #fff;
+}
+
+.content .list label:hover{
+  color: #6d50e2;
+}
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #6d50e2;
+  transition: all 0.4s ease;
+}
+#tab1:checked ~ .list .slider{
+  top: 0;
+}
+#tab2:checked ~ .list .slider{
+  top: 60px;
+}
+#tab3:checked ~ .list .slider{
+  top: 120px;
+}
+#tab4:checked ~ .list .slider{
+  top: 180px;
+}
+
+.content .text-content{
+  height: 100%;
+  display: flex;
+  
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  
+}
+.content .text p{
+  text-align: justify;
+}
+
+.content .text-content .tab1{
+  display: flex;
+  flex-wrap: wrap;
+}
+#tab1:checked ~ .text-content .tab1,
+#tab2:checked ~ .text-content .tab2,
+#tab3:checked ~ .text-content .tab3,
+#tab4:checked ~ .text-content .tab4{
+    display: flex;
+}
+
+#tab2:checked ~ .text-content .tab1,
+#tab3:checked ~ .text-content .tab1,
+#tab4:checked ~ .text-content .tab1{
+    display: none;
+}
+
+.content input{
+  display: none;
+}
+
+/* -----------------------------------------------------*/
+
 /* box shadow
 box-shadow:
     inset 0 0 60px whitesmoke,
@@ -11,18 +158,7 @@ box-shadow:
 
 */
 
-body{
-    
-    display:inline-flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(#141e30, #2a6c56);
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 .container-card{
     position: relative;
     display: flex;
